@@ -427,7 +427,7 @@ export default function Home() {
 					<div>
 						<label for="" class="block text-sm font-medium leading-5 text-gray-700"></label>
 						<div class="mt-1 relative rounded-md shadow-sm">
-						<button type="button" class=" mt-4   bg-gray-600 hover:bg-gray-500 form-input py-4 px-4 block w-full transition ease-in-out duration-150">
+						<button type="button" class=" mt-4 text-white  bg-gray-600 hover:bg-gray-500 form-input py-4 px-4 block w-full transition ease-in-out duration-150">
 					     Send 
 					   </button>
 						</div>
@@ -446,7 +446,7 @@ export default function Home() {
           </h2>
 			<p class="mt-6 text-lg leading-6 text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
 			<div class="mt-8 flex justify-center">	<span class="mx-auto rounded-md shadow-sm ">
-							<button type="button" class="content-center  bg-gray-600 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+							<button type="button" class="content-center text-white  bg-gray-600 hover:bg-gray-500  font-bold py-2 px-4 rounded inline-flex items-center">
 								Request Access
                 </button>
 						</span>
