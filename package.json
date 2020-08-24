@@ -13,6 +13,8 @@
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "tailwindcss": "^1.6.2"
+    "tailwindcss": "^1.6.2",
+    "contentful": "^7.14.6",
+    "contentful-cli": "^1.4.17"
   }
 }

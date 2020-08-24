@@ -1,7 +1,43 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { useEffect, useState, Component } from 'react'
 
+const client = require('contentful').createClient({
+  space: 't0vl274ob8zb',
+  accessToken: 'W77l-kOpOQXl929CHRPw9dBXPgQG9v34Pdi0mPJDs0U',
+  
+})
 export default function Home() {
+
+	const [logo, setLogo] = useState(null)
+	const [header, setHeader] = useState([])
+
+	
+	async function fetchSingleContentTypeData(id) {
+		const entry = await client.getEntry(id);
+		console.log("Entry",entry.fields);
+		if (entry.fields) 
+		 return entry.fields
+		
+	}
+	
+	
+	const [items, setItems] = useState(null)
+	    useEffect(() => {
+		async function fetchEntry() {
+		  const data = await fetchSingleContentTypeData('5lIJ2LFdJuTFvpKUZtil87')
+		if('logo' in data)
+		{
+			setLogo({...data.logo})
+		} 
+		if('headers' in data){
+			setHeader([...data.headers.menu])
+		}
+		}
+		fetchEntry()
+	  }, [])
+	console.log(header)
+
 	return (
 		<div className="relative bg-gray-50">
 	<div className="relative bg-white shadow">
@@ -20,9 +56,14 @@ export default function Home() {
 					</button>
 				</div>
 				<nav className="hidden md:flex ">	
-				   <a href="#" className=" ml-4 mr-4 text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 transition ease-in-out duration-150">
-								Features 
-                            </a> |
+				{header !=null &&(
+					header.map((item,index)=>{
+					<a>{item[index].name}</a>
+					})
+				)}
+
+					
+				  
 					<a href="#" className=" ml-4  mr-4 text-base leading-6 font-medium text-gray-500 hover:text-gray-900 transition ease-in-out duration-150">
 								Testimonials
                            </a> |
