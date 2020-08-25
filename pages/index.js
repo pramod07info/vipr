@@ -11,6 +11,21 @@ export default function Home() {
 
 	const [logo, setLogo] = useState(null)
 	const [header, setHeader] = useState([])
+	const myLists = ['A', 'B', 'C', 'D', 'D'];
+
+	function NameList(props) {  
+		const myLists = props.header;  
+		console.log();
+		const listItems = myLists.map((myList) =>  
+		  <li>{myList.link}</li>  
+		);  
+		return (  
+		  <div>  
+				<h2>React Map Example</h2>  
+					<ul>{listItems}</ul>  
+		  </div>  
+		);  
+	  }  
 
 	
 	async function fetchSingleContentTypeData(id) {
@@ -36,7 +51,7 @@ export default function Home() {
 		}
 		fetchEntry()
 	  }, [])
-	console.log(header)
+	///console.log(header)
 
 	return (
 		<div className="relative bg-gray-50">
@@ -56,11 +71,8 @@ export default function Home() {
 					</button>
 				</div>
 				<nav className="hidden md:flex ">	
-				{header !=null &&(
-					header.map((item,index)=>{
-					<a>{item[index].name}</a>
-					})
-				)}
+				lllllllllllllllllllllllllllllll
+				<NameList header={header} />			
 
 					
 				  
